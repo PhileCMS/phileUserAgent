@@ -15,6 +15,22 @@ This plugin will create a new variable in your template called `{{ useragent }}`
 
 You can use this varaible to load conditional content, add special classes, or even modify your javascript.
 
+#### Exposed Infomation
+
+Here is an example (from my laptop) of the full useragent array:
+
+```php
+array(
+  'useragent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.6 Safari/537.36', // full useragent string
+  'name' => 'Google Chrome', // name of the browser
+  'browser' => 'google-chrome', // css safe browser name
+  'version' => '32.0.1700.6', // browser version number
+  'type' => 'desktop', // form factor browser || mobile
+  'platform' => 'mac', // Operating System
+  'pattern' => '#(?<browser>Version|Chrome|other)[/ ]+(?<version>[0-9.|a-zA-Z.]*)#' // regex pattern that matched
+);
+```
+
 #### Conditional Content
 
 ```html
@@ -38,18 +54,14 @@ You can use this varaible to load conditional content, add special classes, or e
 </body>
 ```
 
-### Exposed Infomation
+#### Javascript Additions
 
-Here is an example (from my laptop) of the full useragent array:
+Here we encode the `{{ useragent }}` array and then we encode that string with the `JSON.parse()` method:
 
-```php
-array(
-  'useragent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.6 Safari/537.36', // full useragent string
-  'name' => 'Google Chrome', // name of the browser
-  'browser' => 'google-chrome', // css safe browser name
-  'version' => '32.0.1700.6', // browser version number
-  'type' => 'desktop', // form factor browser || mobile
-  'platform' => 'mac', // Operating System
-  'pattern' => '#(?<browser>Version|Chrome|other)[/ ]+(?<version>[0-9.|a-zA-Z.]*)#' // regex pattern that matched
-);
+```javascript
+<script type="text/javascript">
+  window.Phile.useragent = JSON.parse('{{ useragent|json_encode() }}');
+</script>
 ```
+
+Now `Phile.useragent.browser` would return the CSS safe browser name in our javascript.
