@@ -56,11 +56,11 @@ array(
 
 #### Javascript Additions
 
-If we put this code in the head of our document, we can encode the `{{ useragent }}` array and then encode that string with the `JSON.parse()` method:
+If we put this code in the *head of our document*, we can encode the `{{ useragent }}` array as json and use it in our javascript:
 
 ```javascript
 <script type="text/javascript">
-  window.Phile.useragent = JSON.parse('{{ useragent|json_encode() }}');
+  window.Phile.useragent = {{ useragent|json_encode() }};
 </script>
 ```
 
