@@ -56,7 +56,7 @@ array(
 
 #### Javascript Additions
 
-Here we encode the `{{ useragent }}` array and then we encode that string with the `JSON.parse()` method:
+If we put this code in the head of our document, we can encode the `{{ useragent }}` array and then encode that string with the `JSON.parse()` method:
 
 ```javascript
 <script type="text/javascript">
