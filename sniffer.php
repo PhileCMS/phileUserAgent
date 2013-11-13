@@ -88,6 +88,4 @@ $sniffer = array(
   'pattern'   => $pattern
   );
 
-var_dump($sniffer);
-
 return $sniffer;
