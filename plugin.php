@@ -11,7 +11,7 @@ class PhileUserAgent extends \Phile\Plugin\AbstractPlugin implements \Phile\Even
 
 	public function on($eventKey, $data = null) {
 		if ($eventKey == 'template_engine_registered') {
-			require_once('sniffer.php');
+			require_once(\Phile\Utility::resolveFilePath("MOD:phileUserAgent/sniffer.php"));
 			$data['data']['useragent'] = $sniffer;
 		}
 	}
