@@ -45,6 +45,9 @@ if((preg_match('/MSIE/i',$u_agent) && !preg_match('/Opera/i',$u_agent)) || preg_
 } elseif(preg_match('/Opera/i', $u_agent)) {
   $bname = 'Opera';
   $ub = "Opera";
+}  else {
+  $bname = 'Unknown';
+  $ub = "Unknown";
 }
 
 // finally get the correct version number
