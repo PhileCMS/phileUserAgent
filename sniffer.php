@@ -67,9 +67,11 @@ if ($i != 1) {
     $version = preg_replace("/(.*) OS ([0-9]*)_(.*)/","$2", $u_agent);
   } elseif (strripos($u_agent,"Version") < strripos($u_agent,$ub)){
     $version = $matches['version'][0];
-  } elseif(isset($matches['version'][1])) {
-    $version = $matches['version'][1];
-  }
+  } else {
+		if (isset($matches['version'][1])) {
+			$version = $matches['version'][1];
+		}
+	}
 } else {
   $version = $matches['version'][0];
 }
