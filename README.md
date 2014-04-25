@@ -11,7 +11,14 @@ php composer.phar require phile/user-agent:*
 
 * Install the latest version of [Phile](https://github.com/PhileCMS/Phile)
 * Clone this repo into `plugins/phile/userAgent`
-* add `$config['plugins']['phile\\userAgent'] = array('active' => true);` to your `config.php`
+
+### 2. Activation
+
+After you have installed the plugin. You need to add the following line to your `config.php` file:
+
+```
+$config['plugins']['phile\\userAgent'] = array('active' => true);
+``
 
 ### Usage
 
