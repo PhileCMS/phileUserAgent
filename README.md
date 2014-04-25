@@ -3,11 +3,15 @@ phileUserAgent
 
 A plugin for [Phile](https://github.com/PhileCMS/Phile) to expose browser user-agent data to the template.
 
-### Installation
+### 1.1 Installation (composer)
+```
+php composer.phar require phile/user-agent:*
+```
+### 1.2 Installation (Download)
 
 * Install the latest version of [Phile](https://github.com/PhileCMS/Phile)
-* Clone this repo into `plugins/phileUserAgent`
-* add `$config['plugins']['phileUserAgent'] = array('active' => true);` to your `config.php`
+* Clone this repo into `plugins/phile/userAgent`
+* add `$config['plugins']['phile\\userAgent'] = array('active' => true);` to your `config.php`
 
 ### Usage
 
