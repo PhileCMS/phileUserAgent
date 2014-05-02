@@ -18,7 +18,7 @@ After you have installed the plugin. You need to add the following line to your 
 
 ```
 $config['plugins']['phile\\userAgent'] = array('active' => true);
-``
+```
 
 ### Usage
 
