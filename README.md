@@ -45,7 +45,7 @@ array(
 #### Conditional Content
 
 ```html
-{% if browser.type == 'desktop' %}
+{% if useragent.type == 'desktop' %}
   <div class="desktop-header-image">
     <img src="images/desktop.jpg" alt="desktop screenshot">
   </div>
