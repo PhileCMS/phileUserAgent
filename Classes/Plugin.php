@@ -25,6 +25,8 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 	public function on($eventKey, $data = null) {
 		if ($eventKey == 'template_engine_registered') {
 			$data['data']['useragent'] = Sniffer::getInformations();
+			$detect = new Mobile_Detect;
+			$data['data']['useragent']['device_type'] = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 		}
 	}
 }
